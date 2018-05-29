@@ -1,0 +1,23 @@
+<ion-content >
+  <section class="login-page">
+    <div class="login-page__logocontainer">
+    <img class="login-page__logo" src="../../../assets/icon/logo.svg"/>
+    </div>
+    <div class="login-page__form">
+    <form class="example-form">
+        <mat-form-field class="minput-field-full regular-input-text">
+          <input matInput type="email" placeholder="Enter Your Email Address" name="email" [(ngModel)]="email">
+        </mat-form-field>
+        <mat-form-field class="minput-field-full regular-input-text ">
+            <input matInput type="password" placeholder="Enter Your Password" name="password" [(ngModel)]="password">
+          </mat-form-field>
+        </form>
+    </div>
+    <div class="basic-login">
+      <button class="regular-btn margin-medium" (click)="auth. emailSignUp(email, password)" mat-button>SignUp</button>
+    </div>
+    <div class="game-btns">
+      <button class="game-btns__exit" mat-button (click)="goBack()"><i class="fa fa-sign-out game-btns__txt" aria-hidden="true"></i></button>
+  </div>
+</section>
+</ion-content>

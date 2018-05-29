@@ -1,0 +1,88 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>game</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+<section class="game-page">
+    <div class="login-page__logocontainer">
+      <img class="login-page__logo" src="../../../assets/icon/logo.svg"/>
+    </div>
+    <div class="game-board">
+    </div>
+    <div class="message" *ngIf="message">
+      <span class="message__txt">{{ messageTxt }}</span>
+    </div>
+    <div class="card-container">
+      <div class="card-container__1">
+          <button class="card-container__btn" mat-button (click)="userClickBtn1()">
+            <img *ngIf="btn1R1o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn1R1x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__1">
+          <button class="card-container__btn" mat-button (click)="userClickBtn2()">
+            <img *ngIf="btn2R1o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn2R1x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__1">
+          <button class="card-container__btn" mat-button (click)="userClickBtn3()">
+            <img *ngIf="btn3R1o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn3R1x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__2">
+          <button class="card-container__btn" mat-button (click)="userClickBtn4()">
+            <img *ngIf="btn4R2o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn4R2x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__2">
+          <button class="card-container__btn" mat-button (click)="userClickBtn5()">
+            <img *ngIf="btn5R2o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn5R2x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__2">
+          <button class="card-container__btn" mat-button (click)="userClickBtn6()">
+            <img *ngIf="btn6R2o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn6R2x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__3">
+          <button class="card-container__btn" mat-button (click)="userClickBtn7()">
+            <img *ngIf="btn7R3o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn7R3x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__3">
+          <button class="card-container__btn" mat-button (click)="userClickBtn8()">
+            <img *ngIf="btn8R3o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn8R3x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+      <div class="card-container__3">
+          <button class="card-container__btn" mat-button (click)="userClickBtn9()">
+            <img *ngIf="btn9R3o" class="card-container__symbol" src="../../../assets/imgs/circle.svg">
+            <img *ngIf="btn9R3x" class="card-container__symbol" src="../../../assets/imgs/x.svg">
+          </button>
+      </div>
+    </div>
+    <div class="game-actions" *ngIf="playAgainBtn">
+        <button class="game-actions__btn margin-medium" mat-button (click)="playAgain()">Play Again</button>
+    </div>
+    <div class="game-btns">
+        <button class="game-btns__exit" mat-button (click)="exitGame()"><i class="fa fa-sign-out game-btns__txt" aria-hidden="true"></i></button>
+    </div>
+    <div class="score-card">
+      <span class="score-card__label">Score X:</span><span class="score-card__score margin-left-small">{{ gService.scoreX }}</span>
+      <span class="score-card__label margin-left-small">Score O:</span><span class="score-card__score margin-left-small">{{ gService.scoreO }}</span>
+    </div>
+    <!-- <div class="record-card">
+      <span class="record-card__label">Your Overall Score:</span><span class="record-card__score">{{ gService.overallGameScore }}</span>
+    </div> -->
+</section>
+
+</ion-content>

@@ -1,0 +1,211 @@
+@import url(~@angular/material/prebuilt-themes/indigo-pink.css);
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden; }
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; }
+
+.social-login {
+  text-align: center; }
+
+.google-btn {
+  background-color: #d34836;
+  color: #fff;
+  font-size: 1.6rem;
+  width: 75%;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  border: solid 1px #8c2518; }
+
+.facebook-btn {
+  color: #fff;
+  background-color: #3b5998;
+  font-size: 1.6rem;
+  width: 75%;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  border: solid 1px #8c2518; }
+
+.basic-login {
+  text-align: center; }
+
+.regular-btn {
+  font-size: 1.6rem;
+  background-color: #73d337;
+  color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  border: solid 1px #47881e; }
+
+.login-page {
+  background-size: cover;
+  background: linear-gradient(71deg, rgba(37, 204, 189, 0.45), rgba(156, 172, 207, 0.51)), url(/assets/imgs/bgMain.jpg);
+  height: 100vh; }
+  .login-page__form {
+    padding: 1rem; }
+  .login-page__logocontainer {
+    text-align: center; }
+  .login-page__logo {
+    width: 16rem;
+    margin-top: 2rem; }
+
+.game-page {
+  background: url(/assets/imgs/bgMain.jpg);
+  background-size: cover;
+  height: 100vh;
+  overflow-y: hidden; }
+
+.game-board {
+  background-size: cover;
+  background: url(/assets/imgs/board.svg) no-repeat;
+  height: 100%;
+  margin: 3rem; }
+
+.card-container {
+  position: absolute;
+  background: #ff000057;
+  top: 10.4rem;
+  left: 3.3rem;
+  border-radius: 1rem;
+  width: 29.6rem;
+  height: 30rem; }
+  .card-container__1 {
+    display: inline-block;
+    width: 9.6rem; }
+  .card-container__2 {
+    display: inline-block;
+    width: 9.6rem; }
+  .card-container__3 {
+    display: inline-block;
+    width: 9.6rem; }
+  .card-container__btn {
+    width: 8rem;
+    margin: .9rem;
+    background: none;
+    color: #fff;
+    height: 8rem;
+    border: none;
+    outline: none; }
+
+.message {
+  background: none;
+  width: 27rem;
+  height: 2rem;
+  position: absolute;
+  top: 8rem;
+  left: 4rem; }
+  .message__txt {
+    color: #175d5c;
+    font-size: 2rem; }
+
+.game-actions {
+  position: absolute;
+  top: 43rem; }
+  .game-actions__btn {
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.6rem;
+    background-color: #73d337;
+    color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+    border: solid 1px #47881e; }
+
+.game-btns {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem; }
+  .game-btns__exit {
+    font-size: 5rem;
+    background: none; }
+  .game-btns__txt {
+    color: #fff; }
+
+.score-card {
+  position: absolute;
+  bottom: 12rem;
+  left: 4rem; }
+  .score-card__label {
+    font-size: 2rem; }
+  .score-card__score {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #ff4243; }
+
+.record-card {
+  position: absolute;
+  bottom: 7.5rem;
+  left: 4rem;
+  font-size: 2rem;
+  background-color: #ff4243;
+  padding: 1rem;
+  color: #fff; }
+  .record-card__score {
+    color: #effa2a;
+    padding-left: 2rem; }
+
+.selection-card {
+  text-align: center;
+  left: 1rem;
+  position: absolute;
+  top: 12rem; }
+  .selection-card__btn {
+    background-color: rgba(53, 86, 162, 0.6);
+    color: #fff;
+    font-size: 2.6rem;
+    border-radius: 2rem;
+    width: 75%;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+    border: solid 1px #566ca8;
+    height: 11rem; }
+
+.display-container {
+  position: absolute;
+  top: 9rem;
+  left: 2rem; }
+  .display-container__txt {
+    color: #000;
+    font-size: 1.8rem; }
+
+.xo-selection {
+  position: absolute;
+  bottom: 17rem;
+  left: 5rem;
+  padding: 2rem;
+  background-color: rgba(255, 100, 101, 0.58);
+  border-radius: 2rem;
+  width: 75%;
+  text-align: center;
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.5); }
+  .xo-selection__label {
+    font-size: 2rem;
+    color: #fff; }
+  .xo-selection__type {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff; }
+
+.minput-field-full {
+  width: 100%; }
+
+.text-small {
+  font-size: 1.6rem; }
+
+.regular-input-text {
+  font-size: 2.5rem; }
+
+.margin-left-small {
+  margin-left: 1rem !important; }
+
+.margin-small {
+  margin: 1rem auto !important; }
+
+.margin-medium {
+  margin: 3rem !important; }

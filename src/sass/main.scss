@@ -1,0 +1,20 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Abstract
+@import "./abstract/_variables";
+
+// Base
+@import "./base/_base";
+
+// Components
+@import "./components/_button";
+
+
+// Layouts
+@import "./layouts/_login";
+@import "./layouts/_game";
+@import "./layouts/_selection";
+
+// Utilities
+@import "./utilities/_minput";
+@import "./utilities/_misc";

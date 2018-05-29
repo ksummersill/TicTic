@@ -1,0 +1,26 @@
+<ion-content>
+    <section class="game-page">
+        <div class="login-page__logocontainer">
+          <img class="login-page__logo" src="../../../assets/icon/logo.svg"/>
+        </div>
+        <div class="display-container">
+            <span class="display-container__txt">Welcome {{ auth.currentUserName }}!</span>
+        </div>
+        <div class="selection-card">
+            <button class="selection-card__btn margin-small" mat-button (click)="singlePlayer()"><i class="fa fa-user" aria-hidden="true"></i> Single Player</button>
+            <button class="selection-card__btn margin-small" mat-button (click)="twoPlayers()"><i class="fa fa-users" aria-hidden="true"></i> Two Players</button>
+        </div>
+        <div class="game-btns">
+                <button class="game-btns__exit" mat-button (click)="auth.signOut()"><i class="fa fa-sign-out game-btns__txt" aria-hidden="true"></i></button>
+        </div>
+        <div class="xo-selection">
+            <span class="xo-selection__label">Choose your type:</span>
+            <br>
+            <br>
+            <mat-radio-group [(ngModel)]="xoselection">
+                    <mat-radio-button  class="xo-selection__type" value="x" name="x">X</mat-radio-button>
+                    <mat-radio-button  class="xo-selection__type margin-left-small" value="o" name="o">O</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </section>
+</ion-content>

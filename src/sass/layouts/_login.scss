@@ -1,0 +1,16 @@
+.login-page{
+    background-size:cover;
+    background: linear-gradient(71deg, rgba(37, 204, 189, 0.45), rgba(156, 172, 207, 0.51)), url(/assets/imgs/bgMain.jpg);
+    height: 100vh;
+
+    &__form{
+        padding:1rem;
+    }
+    &__logocontainer{
+        text-align:center;
+    }
+    &__logo{
+        width: 16rem;
+        margin-top: 2rem;
+    }
+}

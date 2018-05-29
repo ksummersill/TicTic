@@ -1,0 +1,40 @@
+// .small-btn{
+//     padding:1rem;
+    
+//     &__dark{
+//         color:#fff;
+//         background-color:#000;
+//     }
+// }
+
+.social-login{
+    text-align: center;
+}
+.google-btn{
+    background-color: #d34836;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 75%;
+    box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, .5);
+    border: solid 1px #8c2518;
+}
+
+.facebook-btn{
+    color: #fff;
+    background-color: #3b5998;
+    font-size: 1.6rem;
+    width: 75%;
+    box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, .5);
+    border: solid 1px #8c2518;
+}
+.basic-login{
+    text-align:center;
+}
+.regular-btn{
+    font-size: 1.6rem;
+    background-color: #73d337;
+    color: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0,0,0, .5);
+    border: solid 1px #47881e;
+}
