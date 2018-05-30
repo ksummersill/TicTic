@@ -83,8 +83,15 @@ export class AuthService {
       return this.oAuthLogin(provider);
     }
 
+    facebookLogin() {
+      const provider = new firebase.auth.FacebookAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      return this.oAuthLogin(provider);
+    }
+
     private oAuthLogin(provider) {
-      return this.afAuth.auth.signInWithPopup(provider)
+      return this.afAuth.auth.signInWithRedirect(provider)
         .then((credential) => {
           this.authState = credential.user;
           this.updateUserData(credential.user);

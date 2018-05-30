@@ -9,11 +9,17 @@
     background: url(/assets/imgs/board.svg) no-repeat;
     height: 100%;
     margin: 3rem;
+    position: absolute;
+    top: 8.4rem;
+    left: 0.3rem;
+    border-radius: 1rem;
+    width: 29.6rem;
+    height: 30rem;
 }
 .card-container {
     position: absolute;
-    background: #ff000057;
-    top: 10.4rem;
+    // background: #ff000057;
+    top: 11.4rem;
     left: 3.3rem;
     border-radius: 1rem;
     width: 29.6rem;
@@ -50,7 +56,7 @@
     width: 27rem;
     height: 2rem;
     position: absolute;
-    top: 8rem;
+    top: 9rem;
     left: 4rem;
 
     &__txt{
