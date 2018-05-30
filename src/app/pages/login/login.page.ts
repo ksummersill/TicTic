@@ -3,9 +3,13 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// AngularFire
+import { AngularFireAuth } from 'angularfire2/auth';
+
+// Ionic Native
+import { GooglePlus } from '@ionic-native/google-plus';
 
 // Services
-
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -18,7 +22,12 @@ export class LoginPage implements OnInit {
   // Login Form 1
   loginForm: FormGroup;
 
-  constructor(private router: Router, public auth: AuthService, private fb: FormBuilder) { }
+  constructor(private router: Router,
+              private afAuth: AngularFireAuth,
+              public auth: AuthService,
+              private fb: FormBuilder,
+              // private gplus: GooglePlus
+            ) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -40,6 +49,4 @@ export class LoginPage implements OnInit {
   get firstName() {
     return this.loginForm.get('password');
   }
-
-
 }

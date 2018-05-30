@@ -15,6 +15,10 @@ import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'; // I love angular routing in ionic.
 
+import { Platform } from 'ionic-angular';
+import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
+
 
 // Angular Materials
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -64,6 +68,9 @@ import {MatButtonModule,
   providers: [
     StatusBar,
     SplashScreen,
+    Platform,
+    Facebook,
+    GooglePlus,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

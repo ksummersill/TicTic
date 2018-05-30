@@ -214,3 +214,9 @@ body {
 
 .margin-medium {
   margin: 3rem !important; }
+
+.platform-ios.platform-cordova page-landing .scroll-content {
+  margin-top: 20px !important; }
+
+.platform-android.platform-cordova page-landing .scroll-content {
+  margin-top: 20px !important; }

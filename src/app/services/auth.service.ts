@@ -5,9 +5,16 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { of } from 'rxjs';
 import { map, switchMap, throttle } from 'rxjs/operators';
+
+// Ionic Native
+import { Platform } from 'ionic-angular';
+
+// Social Login
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 // Model/ Interface
 import { User } from '../models/user';
@@ -22,6 +29,9 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
+              private fb: Facebook,
+              private googlePlus: GooglePlus,
+              private platform: Platform,
               private router: Router) {
 
               afs.firestore.settings({ timestampsInSnapshots: true });
@@ -71,27 +81,26 @@ export class AuthService {
           get currentUserName(): string {
               // tslint:disable-next-line:max-line-length
               if (this.currentUserAnonymous) {return 'Friend';
-              }   else if (this.authenticated) { return this.authState['email'];
-              } else { console.log(this.authState); return 'No User'; }
+              }  else if (this.authenticated) { return this.authState['email'];
+              } else { return 'No User'; }
           }
 
+    // googleLogin() {
+    //   const provider = new firebase.auth.GoogleAuthProvider();
+    //   provider.addScope('profile');
+    //   provider.addScope('email');
+    //   return this.oAuthLogin(provider);
+    // }
 
-    googleLogin() {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
-      return this.oAuthLogin(provider);
-    }
-
-    facebookLogin() {
-      const provider = new firebase.auth.FacebookAuthProvider();
-      provider.addScope('profile');
-      provider.addScope('email');
-      return this.oAuthLogin(provider);
-    }
+    // facebookLogin() {
+    //   const provider = new firebase.auth.FacebookAuthProvider();
+    //   provider.addScope('profile');
+    //   provider.addScope('email');
+    //   return this.oAuthLogin(provider);
+    // }
 
     private oAuthLogin(provider) {
-      return this.afAuth.auth.signInWithRedirect(provider)
+      return this.afAuth.auth.signInWithPopup(provider)
         .then((credential) => {
           this.authState = credential.user;
           this.updateUserData(credential.user);
@@ -147,6 +156,42 @@ export class AuthService {
     })
     .catch(error => console.log(error)
   );
-}
+  }
+
+  facebookLogin(): Promise<any> {
+    return this.fb.login(['email']);
+  }
+
+  async nativeGoogleLogin(): Promise<void> {
+    try {
+      const gplusUser = await this.googlePlus.login({
+        'webClientId': 'tictic-afd80.firebaseapp.com',
+        'offline': true,
+        'scopes': 'profile email'
+      });
+     return await this.afAuth.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken));
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async webGoogleLogin(): Promise<void> {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('profile');
+      provider.addScope('email');
+      return this.oAuthLogin(provider);
+    } catch (err) {
+      console.log (err);
+    }
+  }
+  googleLogin() {
+    if (this.platform.is('cordova')) {
+      this.nativeGoogleLogin();
+    } else {
+      this.webGoogleLogin();
+    }
+  }
 
 }

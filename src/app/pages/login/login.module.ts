@@ -4,12 +4,18 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+// Ionic Native
+ // import { GooglePlus } from '@ionic-native/google-plus';
+
+// Angualr Services
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../../environments/environment.prod';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
+// Ionic Module
 import { IonicModule } from '@ionic/angular';
 
+// Pages
 import { LoginPage } from './login.page';
 
 // Angular Material
