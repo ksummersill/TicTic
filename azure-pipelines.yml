@@ -13,9 +13,12 @@ steps:
   displayName: 'Install Node.js'
 - task: Ansible@0
   inputs:
-    ansibleInterface: 'agentMachine'
-    inventoriesAgentMachine: 'hostList'
-    inventoryHostListAgentMachine: 'ec2-34-235-124-134.compute-1.amazonaws.com'
+    ansibleInterface: 'remoteMachine'
+    connectionOverSsh: 'ansible'
+    playbookSourceRemoteMachine: 'ansibleMachine'
+    playbookPathAnsibleMachineOnRemoteMachine: '/etc/ansible/'
+    inventoriesRemoteMachine: 'hostList'
+    inventoryHostListRemoteMachine: 'ec2-34-235-124-134.compute-1.amazonaws.com'
 
 - script: |
     npm install -g @angular/cli
