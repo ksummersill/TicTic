@@ -16,9 +16,9 @@ steps:
     ansibleInterface: 'remoteMachine'
     connectionOverSsh: 'ansible'
     playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '/etc/ansible/win-update.yml'
+    playbookPathAnsibleMachineOnRemoteMachine: '/etc/ansible/webservers.yml'
     inventoriesRemoteMachine: 'hostList'
-    inventoryHostListRemoteMachine: 'ec2-54-226-3-113.compute-1.amazonaws.com'
+    inventoryHostListRemoteMachine: 'ec2-54-82-75-161.compute-1.amazonaws.com'
 
 - script: |
     npm install -g @angular/cli
