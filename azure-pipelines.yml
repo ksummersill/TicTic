@@ -1,4 +1,9 @@
 # Node.js with Angular
+- task: Ansible@0
+  inputs:
+    ansibleInterface: 'agentMachine'
+    inventoriesAgentMachine: 'hostList'
+    inventoryHostListAgentMachine: 'ec2-34-235-124-134.compute-1.amazonaws.com'
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
